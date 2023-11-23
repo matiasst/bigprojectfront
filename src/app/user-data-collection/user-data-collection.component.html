@@ -1,0 +1,38 @@
+<div class="center" style="border: 1px solid #b7b7b7; width: 365px; height: 450px; border-radius: 20px; background-color: white;
+padding-left: 35px; padding-right: 35px;">
+  <label for="" style="font-family: sans-serif; display: flex; justify-content: center;">
+    <div class="flex flex-column align-items-center">
+      <h2 style="color: #0C356A;">User registration form</h2>
+      <p style="font-family: sans-serif; text-align: center;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+
+  </label>
+  <form action="" [formGroup]="registerForm">
+    <div class="formgrid grid">
+      <div class="field col-12">
+        <input formControlName="firstName" pInputText id="firstName" type="text" class="w-full"
+          placeholder="First Name">
+      </div>
+      <div class="field col-12">
+
+        <input formControlName="lastName" pInputText id="lastName" type="text" class="w-full" placeholder="Last Name">
+      </div>
+      <div class="field col-12">
+        <input formControlName="phone" pInputText id="phone" type="number" class="w-full" placeholder="Phone Number">
+        <!-- <p-inputNumber class="w-full"></p-inputNumber> -->
+
+      </div>
+      <div class="field col-12">
+        <input formControlName="email" pInputText id="email" type="text" class="w-full" placeholder="Email Adress">
+      </div>
+    </div>
+  </form>
+
+  <div style="display: flex; justify-content: center; margin-top: 15px;">
+    <!-- [disabled]="!registerForm.valid" -->
+    <button pButton pRipple type="button" label="Register" class="p-button-danger mr-2" (click)="onSubmit()"
+      style="width: -webkit-fill-available;"></button>
+    <!-- <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-warning" (click)="onReset()"></button> -->
+  </div>
+</div>
