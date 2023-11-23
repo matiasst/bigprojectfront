@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background-image: url("/assets/img/background.jpg");
-  background-size: 100%;
-  background-size: cover;
+  // background-image: url("/assets/img/background.jpg");
+  // background-size: 100%;
+  // background-size: cover;
   // background-repeat: no-repeat;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-image: url("/assets/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; /* Center the background image */
+  height: 100vh; /* Ensure the body takes up the full height of the viewport */
 }
