@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api.service';
+import { Iuser } from '../interfaces/iuser';
 
 @Component({
   selector: 'app-display-user-data',
@@ -7,20 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayUserDataComponent implements OnInit {
 
-  users: any[] = []
+  users: Iuser[] = [];
 
-  constructor() {
-
-    this.users =  [
-      {firstName: 'Tommy', lastName: 'Johnson', phone: '254789', email: 'tjohnson@gmail.com'},
-      {firstName: 'Katy', lastName: 'Wright', phone: '148961', email: 'kwright@gmail.com'},
-      {firstName: 'Rlph', lastName: 'Baker', phone: '321489', email: 'rbaker@gmail.com'},
-      {firstName: 'Samy', lastName: 'Timber', phone: '567849', email: 'stimber@gmail.com'},
-    ]
-
-  }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  async getUsers() {
+    try {
+      this.apiService.getUsers().subscribe((users: Iuser[]) => this.users = users);
+    } catch (error) {
+      console.log(error);
+
+    }
   }
 
 }

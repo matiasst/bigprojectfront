@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../service/api.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-user-data-collection',
@@ -11,26 +13,34 @@ export class UserDataCollectionComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private route: Router) { }
+  constructor(private formBuilder: FormBuilder, private route: Router, private apiService: ApiService,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
 
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required]]
+      phone_number: ['', [Validators.required]]
     });
   }
 
   onSubmit() {
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
+    try {
+      // stop here if form is invalid
+      if (this.registerForm.invalid) {
+        return;
+      }
+        // display form values on success
+        this.apiService.postUser(this.registerForm.value).subscribe( data => {
+          this.messageService.add({severity:'success', summary: 'Success', detail: 'User added successfully'});
+        });
+        this.registerForm.reset();
+    } catch (error) {
+      console.log(error);
     }
-    // display form values on success
-    console.log(JSON.stringify(this.registerForm.value));
-    this.registerForm.reset();
+
   }
 
   onReset() {
