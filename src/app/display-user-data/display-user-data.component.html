@@ -1,23 +1,21 @@
 
-<div class="center">
-  <p-table [value]="users">
-    <ng-template pTemplate="header">
+  <div class="center">
+    <p-table [value]="users">
+      <ng-template pTemplate="header">
         <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
         </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-user>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
         <tr>
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.phone}}</td>
-            <td>{{user.email}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.email}}</td>
         </tr>
-    </ng-template>
-  </p-table>
-</div>
-
-
+      </ng-template>
+    </p-table>
+  </div>

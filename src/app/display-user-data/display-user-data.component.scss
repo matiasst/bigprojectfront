@@ -4,4 +4,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
+  background-color: white;
+  border-radius: 25px;
 }
+
+// :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+//   mix-blend-mode: multiply !important;
+//   background-color: unset !important;
+//   color: white !important;
+// }
+
+// :host ::ng-deep .p-datatable .p-datatable-tbody > tr {
+//   mix-blend-mode: multiply !important;
+//   background-color: unset !important;
+//   color: white !important;
+// }

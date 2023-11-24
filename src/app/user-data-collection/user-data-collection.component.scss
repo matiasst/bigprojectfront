@@ -3,6 +3,16 @@ body {
   overflow-y: auto;   /* Allow vertical overflow with a scrollbar */
 }
 
+// .center {
+//   border: 1px solid;
+//   position: absolute;
+//   top: 50%;
+//   right: 2%;
+//   transform: translate(-50%, -50%);
+//   padding: 10px;
+// }
+
+
 .center {
   border: 1px solid;
   position: absolute;
@@ -10,4 +20,34 @@ body {
   right: 2%;
   transform: translate(-50%, -50%);
   padding: 10px;
+
+  /* Adjustments for smaller screens */
+  max-width: 80%; /* Set a maximum width for the form */
+  width: auto; /* Allow the form to shrink */
+}
+
+// .center {
+//   border: 1px solid #b7b7b7;
+//   width: 365px;
+//   height: 450px;
+//   border-radius: 20px;
+//   background-color: white;
+//   padding-left: 35px;
+//   padding-right: 35px;
+//   position: absolute;
+//   top: 50%;
+//   right: 2%;
+//   transform: translate(-50%, -50%);
+// }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .center {
+    // position: static; /* Remove absolute positioning on smaller screens */
+    // transform: none; /* Remove the transform on smaller screens */
+    // margin: 0 auto; /* Center the form using margin */
+    position: static;
+    transform: none;
+    margin: 20px auto; /* Adjust the margin to create space between the form and the header */
+  }
 }

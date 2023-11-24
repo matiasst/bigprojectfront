@@ -1,0 +1,26 @@
+/* header.component.css */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // background-color: #333; /* Add your desired background color */
+}
+
+.header-content {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+}
