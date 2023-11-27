@@ -1,0 +1,22 @@
+<div class="center" style="border: 1px solid #b7b7b7; width: 365px; height: 450px; border-radius: 20px; background-color: white;
+padding-left: 35px; padding-right: 35px;">
+  <form [formGroup]="userForm">
+    <label for="" style="font-family: sans-serif; display: flex; justify-content: center;">
+      <div class="flex flex-column align-items-center">
+        <h2 style="color: #0C356A;">Login</h2>
+      </div>
+    </label>
+    <div class="field col-12">
+      <input pInputText type="text" id="username" formControlName="username" class="w-full" placeholder="Username"
+        required>
+    </div>
+    <div class="field col-12">
+      <input pInputText type="password" id="password" formControlName="password" class="w-full" placeholder="Password"
+        required>
+    </div>
+    <div style="display: flex; justify-content: end; margin-top: 15px;">
+      <button pButton label="Login" type="submit" class="mr-2" (click)="login(userForm.value)"
+        style="width: -webkit-fill-available;"></button>
+    </div>
+  </form>
+</div>
