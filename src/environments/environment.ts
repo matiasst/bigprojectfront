@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://195.154.26.77:3000'
+  url: 'http://127.0.0.1:3000'
 };
 
 /*
